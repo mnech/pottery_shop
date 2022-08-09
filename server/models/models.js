@@ -22,7 +22,7 @@ const Product = sequelize.define("product", {
   name: { type: DataTypes.STRING, allowNull: false },
   desc: { type: DataTypes.STRING },
   price: { type: DataTypes.INTEGER, allowNull: false },
-  img: { type: DataTypes.INTEGER, allowNull: false },
+  img: { type: DataTypes.STRING, allowNull: false },
 });
 
 const TypeProduct = sequelize.define("type_product", {
