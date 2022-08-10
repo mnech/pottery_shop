@@ -13,7 +13,7 @@ class typeController {
     return res.json(types);
   }
 
-  async delete(req, res) {
+  async delete(req, res, next) {
     const { id } = req.query;
     const result = await TypeProduct.destroy({
       where: { id },
