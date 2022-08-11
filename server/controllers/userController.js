@@ -5,7 +5,7 @@ const { User, BasketProduct } = require("../models/models");
 
 const generateJwt = (id, email, role) => {
   return jwt.sign({ id, email, role }, process.env.SECRET_KEY, {
-    expiresIn: "24",
+    expiresIn: "24h",
   });
 };
 
@@ -59,11 +59,7 @@ class userController {
   }
 
   async check(req, res, next) {
-    const { id } = req.query;
-    if (!id) {
-      return next(ApiError.badRequest("ID not set"));
-    }
-    res.json(id);
+    res.json({ message: "ok" });
   }
 }
 
